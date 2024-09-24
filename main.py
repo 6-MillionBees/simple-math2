@@ -1,7 +1,8 @@
 # Arden Boettcher
 # 9/24/24
 # Simple Math part 2
-import time
+
+import time # It's a suprise tool that will help us later
 import math
 
 # Task 1:
