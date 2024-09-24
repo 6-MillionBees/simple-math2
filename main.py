@@ -6,7 +6,6 @@ import math
 
 # Task 1:
 
-
 item = input('Enter the cost of the discounted item: ')
 float_item = float(item.replace('$', '')) # This removes the dollar sign if the user puts one in
 
@@ -15,6 +14,7 @@ product = float_item * 0.8
 print(f'The cost of the discounted item is: ${product:.2f}\n')
 
 # Task 2:
+
 length = int(input('How long is the garden? '))
 width = int(input('How wide is the garden? '))
 
