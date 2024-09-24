@@ -61,7 +61,7 @@ pizzas = str(people / pizza_slice)
 pizza_rounded = math.ceil(people / pizza_slice) # Big fan of making things overly complicated
 extra_pizza = 0
 
-if pizzas.isalnum() == True:
+if pizzas.isalnum() == True: # There was a problem with pizzas being a whole number, this fixes it.
     pizza_find = pizzas.find('.')
     pizza_float = float(pizzas[pizza_find:])
     extra_pizza = pizza_slice * (1 - pizza_float) # This whole section has 7 different variables, 5 of them start with pizza.
