@@ -1,8 +1,7 @@
 # Arden Boettcher
 # 9/24/24
 # Simple Math part 2
-
-import time # It's a suprise tool that will help us later
+import time
 import math
 
 # Task 1:
@@ -16,16 +15,24 @@ product = float_item * 0.8
 print(f'The cost of the discounted item is: ${product:.2f}\n')
 
 # Task 2:
+length = int(input('How long is the garden? '))
+width = int(input('How wide is the garden? '))
 
-print(f'The area of the garden is {12 * 8}')
+print(f'The area of the garden is {length * width}\n')
 
 # Task 3:
 
 bacteria = 10
 hours = 0
 
+while hours <= 5:
+    print(f'Hour {hours}:', end= ' ')
+    print(bacteria)
+    bacteria *=2
+    hours += 1
+
 '''
-while hours <= 5: # This one makes you actually wait an hour between loops!
+while hours <= 5: # This one makes you wait a whole hour between loops! (For immersion)
     print(f'Hour {hours}:')
     print(bacteria)
     bacteria *=2
@@ -33,20 +40,14 @@ while hours <= 5: # This one makes you actually wait an hour between loops!
     time.sleep(3600)
 '''
 
-while hours <= 5:
-    print(f'Hour {hours}:')
-    print(bacteria)
-    bacteria *=2
-    hours += 1
-
 # Task 4:
 
-distance = int(input('How far away is your destination? (in kilometers): '))
+distance = int(input('\nHow far away is your destination? (in kilometers): '))
 velocity = int(input('How fast are you going? (in kilometers per hour): '))
 
 time_took = distance / velocity
 
-print(f'It will take {time_took:.2f} hours.')
+print(f'\nIt will take {time_took:.2f} hours.\n')
 
 # Task 5:
 
@@ -63,6 +64,6 @@ pizza_rounded = math.ceil(people / pizza_slice) # Big fan of making things overl
 pizza_find = pizzas.find('.')
 pizza_float = float(pizzas[pizza_find:])
 
-extra_pizza = pizza_slice * pizza_float # After this pizza doen't look like a real word
+extra_pizza = pizza_slice * pizza_float # This whole section has 7 different variables, 5 of them start with pizza.
 
-print(f'You would need {pizza_rounded} pizza(s) and you would have {int(extra_pizza)} slice(s) left over.\n')
+print(f'\nYou would need {pizza_rounded} pizza(s) and you would have {int(extra_pizza)} slice(s) left over.\n')
