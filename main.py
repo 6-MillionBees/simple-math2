@@ -59,11 +59,11 @@ pizza_slice = int(input('How many slices per pizza?: '))
 
 pizzas = str(people / pizza_slice)
 pizza_rounded = math.ceil(people / pizza_slice) # Big fan of making things overly complicated
+
 extra_pizza = 0
 
-if pizzas.isalnum() == True: # There was a problem with pizzas being a whole number, this fixes it.
-    pizza_find = pizzas.find('.')
-    pizza_float = float(pizzas[pizza_find:])
+if float(pizzas).is_integer() == False: # There was a problem with pizzas being a whole number, this fixes it.
+    pizza_float = float(pizzas[pizzas.find('.'):])
     extra_pizza = pizza_slice * (1 - pizza_float) # This whole section has 7 different variables, 5 of them start with pizza.
 
 print(f'\nYou would need {pizza_rounded} pizza(s) and you would have {int(extra_pizza)} slice(s) left over.\n')
