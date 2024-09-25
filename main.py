@@ -1,6 +1,7 @@
 # Arden Boettcher
 # 9/24/24
 # Simple Math part 2
+
 import time
 import math
 
@@ -8,7 +9,6 @@ import math
 
 item = input('Enter the cost of the discounted item: ')
 float_item = float(item.replace('$', '')) # This removes the dollar sign if the user puts one in
-
 product = float_item * 0.8
 
 print(f'The cost of the discounted item is: ${product:.2f}\n')
@@ -30,7 +30,6 @@ while hours <= 5:
     print(bacteria)
     bacteria *=2
     hours += 1
-
 '''
 while hours <= 5: # This one makes you wait a whole hour between loops! (For immersion)
     print(f'Hour {hours}:')
@@ -39,7 +38,6 @@ while hours <= 5: # This one makes you wait a whole hour between loops! (For imm
     hours += 1
     time.sleep(3600)
 '''
-
 # Task 4:
 
 distance = int(input('\nHow far away is your destination? (in kilometers): '))
@@ -50,20 +48,22 @@ print(f'\nIt will take {time_took:.2f} hours.\n')
 
 # Task 5:
 
+# Task 5:
+
 # The instructions say "A group of 23 people want to share *A* pizza evenly" which does not work because 23 <= 8 == False.
 print('You can\'t evenly split a single eight piece pizza between 23 people... but with multiple pizzas:\n')
 
 # So I made it work under the assumption that there are multiple pizzas
+
 people = int(input('How many people?: '))
 pizza_slice = int(input('How many slices per pizza?: '))
 
 pizzas = str(people / pizza_slice)
 pizza_rounded = math.ceil(people / pizza_slice) # Big fan of making things overly complicated
-
 extra_pizza = 0
 
 if float(pizzas).is_integer() == False: # There was a problem with pizzas being a whole number, this fixes it.
     pizza_float = float(pizzas[pizzas.find('.'):])
-    extra_pizza = pizza_slice * (1 - pizza_float) # This whole section has 7 different variables, 5 of them start with pizza.
+    extra_pizza = math.ceil(pizza_slice * (1 - pizza_float)) # This whole section has 7 different variables, 5 of them start with pizza.
 
 print(f'\nYou would need {pizza_rounded} pizza(s) and you would have {int(extra_pizza)} slice(s) left over.\n')
