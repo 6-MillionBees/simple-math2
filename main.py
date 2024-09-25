@@ -9,6 +9,7 @@ import math
 
 item = input('Enter the cost of the discounted item: ')
 float_item = float(item.replace('$', '')) # This removes the dollar sign if the user puts one in
+
 product = float_item * 0.8
 
 print(f'The cost of the discounted item is: ${product:.2f}\n')
@@ -26,27 +27,26 @@ bacteria = 10
 hours = 0
 
 while hours <= 5:
-    print(f'Hour {hours}:', end= ' ')
-    print(bacteria)
+    print(f'Hour {hours}: {bacteria}')
     bacteria *=2
     hours += 1
+
 '''
 while hours <= 5: # This one makes you wait a whole hour between loops! (For immersion)
-    print(f'Hour {hours}:')
-    print(bacteria)
+    print(f'Hour {hours}: {bacteria}')
     bacteria *=2
     hours += 1
     time.sleep(3600)
 '''
+
 # Task 4:
 
 distance = int(input('\nHow far away is your destination? (in kilometers): '))
 velocity = int(input('How fast are you going? (in kilometers per hour): '))
+
 time_took = distance / velocity
 
 print(f'\nIt will take {time_took:.2f} hours.\n')
-
-# Task 5:
 
 # Task 5:
 
@@ -58,12 +58,12 @@ print('You can\'t evenly split a single eight piece pizza between 23 people... b
 people = int(input('How many people?: '))
 pizza_slice = int(input('How many slices per pizza?: '))
 
-pizzas = str(people / pizza_slice)
+pizzas = str(people / pizza_slice) 
 pizza_rounded = math.ceil(people / pizza_slice) # Big fan of making things overly complicated
 extra_pizza = 0
 
 if float(pizzas).is_integer() == False: # There was a problem with pizzas being a whole number, this fixes it.
     pizza_float = float(pizzas[pizzas.find('.'):])
     extra_pizza = math.ceil(pizza_slice * (1 - pizza_float)) # This whole section has 7 different variables, 5 of them start with pizza.
-
+# THERE WAS THE MODULUS OPERATOR THIS WHOLE TIME. I'm gonna cry myself to sleep tonight.
 print(f'\nYou would need {pizza_rounded} pizza(s) and you would have {int(extra_pizza)} slice(s) left over.\n')
